@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="card">
+        <div class="card-body">
+          <h4>New model</h4>
+          <input ng-model="model.title" placeholder="Title" type="text" class="form-control">
+          <input ng-model="model.description" placeholder="Description" type="text" class="form-control">
+
+          <input type="file" file-model="file"/>
+
+          <input ng-model="model.accuracy" placeholder="Accuracy" type="text" class="form-control">
+            <a ng-click="upload()" class="btn btn-raised pull-right c_o_pink300">Upload</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

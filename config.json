@@ -1,0 +1,8 @@
+{
+    "apiport": "3000",
+    "webport": "8081",
+    "mongodb": {
+        "ip": "127.0.0.1:27017",
+        "database": "decentralized-blogging-platform"
+    }
+}

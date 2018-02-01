@@ -1,0 +1,13 @@
+{
+  "name": "decentralized-blogging-platform",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0"
+  }
+}

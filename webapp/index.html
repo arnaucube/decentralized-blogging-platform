@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app" ng-cloak>
+
+<head>
+    <meta charset="utf-8">
+    <title>ipfs-ai-models-market</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="img/icon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Overpass+Mono:700|Raleway:700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/own.css">
+
+    <link href="bower_components/cssMaterialColors/colors.css" rel="stylesheet">
+</head>
+
+<body ng-app="webapp">
+    <div ng-include="'views/navbar.html'"></div>
+    <br><br><br><br>
+    <div ng-view></div>
+
+
+
+<!-- ELECTRON
+Insert this line above script imports
+Works for both browser and electron with the same code -->
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+
+    <!-- Angular js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <!-- Angular Chart -->
+    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+    <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+    <!-- toastr -->
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+    <script type="text/javascript" src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+    <!-- app's js -->
+    <script src="app.js"></script>
+    <script src="views/navbar.js"></script>
+    <script src="views/signup/signup.js"></script>
+    <script src="views/login/login.js"></script>
+    <script src="views/main/main.js"></script>
+    <script src="views/newmodel/newmodel.js"></script>
+    <script src="views/profile/profile.js"></script>
+
+
+<!-- ELECTRON
+Insert this line after script imports -->
+<script>if (window.module) module = window.module;</script>
+
+</body>
+
+</html>
