@@ -12,7 +12,7 @@ angular.module('app', [
   'app.login',
   'app.main',
   'app.newmodel',
-  'app.profile'
+  'app.user'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');

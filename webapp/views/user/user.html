@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="o_userProfileBackground">
+        </div>
+        <div class="card-body">
+          <img class="o_userImgCircular" ng-src="https://www.eyerys.com/sites/default/files/mark_zuckerberg.jpg" />
+          <h4>
+                {{user.name}} {{user.lastname}}
+            </h4>
+          <p>{{user.description}}</p>
+          <p>
+            <a ng-href="#!/userLikes/{{user._id}}">
+                14 followers
+            </a> |
+            <a ng-href="#!/userLikes/{{user._id}}">
+                20 following
+            </a>
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <b>About</b>
+          <p>
+            Twitter <a ng-href="https://twitter.com/{{user.twitter}}" target="_blank">{{user.twitter}}</a>
+          </p>
+          <p>
+            Github <a ng-href="https://github.com/{{user.github}}" target="_blank">{{user.github}}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div ng-repeat="post in user.posts">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
+            <img ng-src="{{post.img}}" class="img-fluid" />
+            <p class="card-text">{{post.content}}</p>
+            <div class="pull-right">
+              <i title="Server" class="fa fa-heart ct_red300 fa-1x"></i> 37
+            </div>
+          </div>
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <b>Discover</b>
+          <p>
+            bla bla bla bla bla
+          </p>
+          <p>
+            bla bla bla bla bla
+          </p>
+        </div>
+      </div>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <b>Featured posts</b>
+        </div>
+        <div ng-repeat="post in featured_posts">
+          <div class="card-body">
+            <h5 class="card-title">{{post.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
+            <img ng-src="{{post.img}}" class="img-fluid" />
+            <p class="card-text">{{post.content}}</p>
+            <div class="pull-right">
+              <i title="Server" class="fa fa-heart ct_red300 fa-1x"></i> 37
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
