@@ -21,4 +21,34 @@ var routes = Routes{
 		"/login",
 		Login,
 	},
+	Route{
+		"GetUsers",
+		"GET",
+		"/users",
+		GetUsers,
+	},
+	Route{
+		"GetUser",
+		"GET",
+		"/user/{userid}",
+		GetUser,
+	},
+	Route{
+		"NewPost",
+		"POST",
+		"/post",
+		NewPost,
+	},
+	Route{
+		"GetPosts",
+		"GET",
+		"/posts",
+		GetPosts,
+	},
+	Route{
+		"GetPost",
+		"GET",
+		"/post/{postid}",
+		GetPost,
+	},
 }

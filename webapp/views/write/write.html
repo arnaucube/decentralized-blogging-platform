@@ -2,24 +2,7 @@
   <div class="row">
     <div class="col-sm-3">
       <div class="card">
-        <div class="o_userProfileBackground">
-        </div>
-        <div class="card-body">
-          <img class="o_userImgCircular o_profilePageImage" ng-src="https://www.eyerys.com/sites/default/files/mark_zuckerberg.jpg" />
-          <h4>
-                {{user.name}} {{user.lastname}}
-            </h4>
-            <h6 class="card-subtitle mb-2 text-muted">@{{user.username}}</h6>
-          <p>{{user.description}}</p>
-          <p>
-            <a ng-href="#!/userLikes/{{user._id}}">
-                14 followers
-            </a> |
-            <a ng-href="#!/userLikes/{{user._id}}">
-                20 following
-            </a>
-          </p>
-        </div>
+        <div ng-include="'views/templates/user-thumb-template.html'"></div>
       </div>
       <br>
       <div class="card">
@@ -38,11 +21,18 @@
       <div class="row">
         <div class="col-sm-10">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Title of the article..." style="font-weight:bold;">
+            <input ng-model="post.title" type="text" class="form-control" placeholder="Title of the article..." style="font-weight:bold;">
           </div>
         </div>
         <div class="col-sm-2">
-          <div ng-click="save()" class="btn btn-raised btn-block c_o_blue300 pull-right">Publicate</div>
+          <div ng-click="publicate()" class="btn btn-raised btn-block c_o_blue300 pull-right">Publicate</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <input ng-model="post.summary" type="text" class="form-control" placeholder="Summary of the article...">
+          </div>
         </div>
       </div>
       <div class="card">

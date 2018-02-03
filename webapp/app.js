@@ -12,6 +12,7 @@ angular.module('app', [
   'app.login',
   'app.main',
   'app.newmodel',
+  'app.users',
   'app.user',
   'app.post',
   'app.write'
@@ -37,7 +38,7 @@ console.log("window", window.location.hash);
 
           localStorage.removeItem('dblog_user');
           localStorage.removeItem('dblog_user');
-          window.location='#!/main';
+          //window.location='#!/main';
           $routeProvider.otherwise({redirectTo: '/main'});
         }
       }
@@ -76,6 +77,7 @@ console.log("window", window.location.hash);
   .factory('api', function($http) {
     return {
       init: function() {
+        console.log("http", $http.options);
         var dblog_user = JSON.parse(localStorage.getItem('dblog_user'));
         if (dblog_user) {
           $http.defaults.headers.common['Authorization'] = dblog_user.token;
@@ -86,4 +88,12 @@ console.log("window", window.location.hash);
   })
   .run(function(api) {
     api.init();
-  });
+  })
+  .config(function($sceDelegateProvider) {
+  $sceDelegateProvider.resourceUrlWhitelist([
+    // Allow same origin resource loads.
+    'self',
+    // Allow loading from outer templates domain.
+    'http://localhost:8080/**'
+  ]);
+});

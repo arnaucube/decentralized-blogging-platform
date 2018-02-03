@@ -1,0 +1,22 @@
+<div class="card">
+  <a ng-href="#!/user/{{user.id}}">
+    <div class="o_userProfileBackground">
+    </div>
+    <div class="card-body">
+      <img class="o_userImgCircular o_profilePageImage" ng-src="https://www.eyerys.com/sites/default/files/mark_zuckerberg.jpg" />
+      <h4>
+              {{user.name}} {{user.lastname}}
+          </h4>
+      <h6 class="card-subtitle mb-2 text-muted">@{{user.username}}</h6>
+      <p>{{user.description}}</p>
+      <p>
+        <a ng-href="#!/userLikes/{{user._id}}">
+              14 followers
+          </a> |
+        <a ng-href="#!/userLikes/{{user._id}}">
+              20 following
+          </a>
+      </p>
+    </div>
+  </a>
+</div>

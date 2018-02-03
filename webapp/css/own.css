@@ -32,7 +32,7 @@ a, a:hover {
 }
 
 .o_userImgCircular {
-  width: 60px;
+  width: 40px;
   background: #ffffff;
   border-radius: 150px;
   -webkit-border-radius: 150px;
@@ -45,4 +45,10 @@ a, a:hover {
   margin-left: 25%;
   width: 50%;
   width: 50%;
+}
+
+.o_card-body {
+  padding-left:1.25rem;
+  padding-right:1.25rem;
+  padding-top:0.8rem;
 }

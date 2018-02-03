@@ -1,26 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <div class="card">
-        <div class="o_userProfileBackground">
-        </div>
-        <div class="card-body">
-          <img class="o_userImgCircular o_profilePageImage" ng-src="https://www.eyerys.com/sites/default/files/mark_zuckerberg.jpg" />
-          <h4>
-                {{user.name}} {{user.lastname}}
-            </h4>
-            <h6 class="card-subtitle mb-2 text-muted">@{{user.username}}</h6>
-          <p>{{user.description}}</p>
-          <p>
-            <a ng-href="#!/userLikes/{{user._id}}">
-                14 followers
-            </a> |
-            <a ng-href="#!/userLikes/{{user._id}}">
-                20 following
-            </a>
-          </p>
-        </div>
-      </div>
+      <div ng-include="'views/templates/user-thumb-template.html'"></div>
       <br>
       <div class="card">
         <div class="card-body">
@@ -35,9 +16,15 @@
       </div>
     </div>
     <div class="col-sm-6">
+
       <div ng-repeat="post in user.posts">
         <div ng-include="'views/templates/post-thumb-template.html'"></div>
         <br>
+      </div>
+      <div ng-show="!user.posts" class="card">
+        <div class="card-body">
+          <h5>No articles yet</h5>
+        </div>
       </div>
     </div>
     <div class="col-sm-3">

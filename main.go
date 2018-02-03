@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/fatih/color"
 	"github.com/gorilla/handlers"
@@ -15,6 +16,7 @@ const keysize = 2048
 const hashize = 1536
 
 var userCollection *mgo.Collection
+var postCollection *mgo.Collection
 
 func main() {
 	color.Blue("Starting ipfs-ai-models-market")
@@ -22,12 +24,18 @@ func main() {
 	readConfig("config.json")
 	fmt.Println(config)
 
+	//create models directory
+	_ = os.Mkdir(keysDir, os.ModePerm)
+	//create models directory
+	_ = os.Mkdir("ownposts", os.ModePerm)
+
 	initializeToken()
 
 	//mongodb
 	session, err := getSession()
 	check(err)
 	userCollection = getCollection(session, "users")
+	postCollection = getCollection(session, "posts")
 
 	//run thw webserver
 	go GUI()
@@ -37,7 +45,7 @@ func main() {
 	log.Print("port: ")
 	log.Println(config.APIPort)
 	router := NewRouter()
-	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With", "Access-Control-Allow-Origin"})
+	headersOk := handlers.AllowedHeaders([]string{"X-Requested-With", "Access-Control-Allow-Origin", "Authorization"})
 	originsOk := handlers.AllowedOrigins([]string{"*"})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 	log.Fatal(http.ListenAndServe(":"+config.APIPort, handlers.CORS(originsOk, headersOk, methodsOk)(router)))

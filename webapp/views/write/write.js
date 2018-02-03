@@ -10,7 +10,11 @@ angular.module('app.write', ['ngRoute'])
     }])
 
     .controller('WriteCtrl', function($scope, $rootScope, $http) {
-          $scope.content = "";
+          $scope.post = {
+            title: "",
+            content: "",
+            summary: ""
+          };
           var editor = new MediumEditor('.editable', {
             toolbar: {
               /* These are the default options for the toolbar,
@@ -35,8 +39,29 @@ angular.module('app.write', ['ngRoute'])
             }
           }).subscribe('editableInput', function (event, editable) {
               // Do some work
-              $scope.content = editable.innerHTML;
-              console.log($scope.content);
+              $scope.post.content = editable.innerHTML;
+              console.log($scope.post.content);
           });
 
+
+          $scope.publicate = function() {
+            console.log("post", $scope.post);
+            $http({
+                url: apiurl + 'post',
+                method: "POST",
+                headers: {
+                  "Content-Type": undefined
+                },
+                data: $scope.post
+              })
+              .then(function(data) {
+                  console.log("data: ");
+                  console.log(data.data);
+                  window.location = "#!/user/" + $scope.user.id;
+                },
+                function(data) {
+                  console.log(data);
+                });
+
+          };
     });

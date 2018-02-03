@@ -1,26 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <div class="card">
-        <div class="o_userProfileBackground">
-        </div>
-        <div class="card-body">
-          <img class="o_userImgCircular o_profilePageImage" ng-src="https://www.eyerys.com/sites/default/files/mark_zuckerberg.jpg" />
-          <h4>
-                {{user.name}} {{user.lastname}}
-            </h4>
-            <h6 class="card-subtitle mb-2 text-muted">@{{user.username}}</h6>
-          <p>{{user.description}}</p>
-          <p>
-            <a ng-href="#!/userLikes/{{user._id}}">
-                14 followers
-            </a> |
-            <a ng-href="#!/userLikes/{{user._id}}">
-                20 following
-            </a>
-          </p>
-        </div>
-      </div>
+      <div ng-include="'views/templates/user-thumb-template.html'"></div>
       <br>
       <div class="card">
         <div class="card-body">
@@ -41,6 +22,9 @@
           <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
           <img ng-src="{{post.img}}" class="img-fluid" />
           <p class="card-text">{{post.content}}</p>
+
+          <div ng-include="'http://localhost:8080/ipfs/QmUv3dQuNREHnEFYs7JkqyxZjYfEXd4t9jej5jY2dPVaqU'"></div>
+
           <div class="pull-right">
             <i title="Server" class="fa fa-heart ct_red300 fa-1x"></i> 37
           </div>

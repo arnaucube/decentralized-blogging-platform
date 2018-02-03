@@ -3,23 +3,22 @@
 angular.module('app.post', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/post', {
+        $routeProvider.when('/post/:postid', {
             templateUrl: 'views/post/post.html',
             controller: 'PostCtrl'
         });
     }])
 
-    .controller('PostCtrl', function($scope, $rootScope, $http) {
-
-        /*$http.get(apiurl + 'user/' + )
+    .controller('PostCtrl', function($scope, $rootScope, $http, $routeParams) {
+        $scope.post = {};
+        $scope.user = {};
+        $http.get(apiurl + 'post/' + $routeParams.postid)
             .then(function(data) {
                 console.log('data success');
                 console.log(data);
-                $scope.user = data.data;
+                $scope.post = data.data;
+                $scope.user = $scope.post.user;
             }, function(data) {
                 console.log('no user');
-            });*/
-            //fake data
-          $scope.user = user;
-          $scope.post = user.posts[0];
+            });
     });

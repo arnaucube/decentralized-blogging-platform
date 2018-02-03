@@ -12,8 +12,14 @@ angular.module('app.main', ['ngRoute'])
     .controller('MainCtrl', function($scope, $rootScope, $http) {
 
 
-      $scope.user = user;
-      $scope.featured_posts= featured_posts;
-      $scope.posts = posts;
+      $scope.posts = {};
+      $http.get(apiurl + 'posts')
+          .then(function(data) {
+              console.log('data success');
+              console.log(data);
+              $scope.posts = data.data;
+          }, function(data) {
+              console.log('no user');
+          });
 
     });
