@@ -12,5 +12,8 @@ angular.module('app.main', ['ngRoute'])
     .controller('MainCtrl', function($scope, $rootScope, $http) {
 
 
-        
+      $scope.user = user;
+      $scope.featured_posts= featured_posts;
+      $scope.posts = posts;
+
     });

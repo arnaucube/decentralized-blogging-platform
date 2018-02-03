@@ -15,13 +15,18 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Top Writters</a>
         </li>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
       <ul class="navbar-nav" ng-show="user">
         <li class="nav-item">
-          <a href="#!/profile" class="nav-link">
+          <a href="#!/write" class="nav-link">
+            <i title="New article" class="fa fa-plus fa-1x"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#!/user/{{user.id}}" class="nav-link">
             <i title="Profile" class="fa fa-user fa-1x"></i> {{user.username}}
           </a>
         </li>
@@ -34,7 +39,7 @@
       <ul class="navbar-nav" ng-show="!user">
         <li class="nav-item">
           <a href="#!/signup" class="nav-link">
-            <i title="Signup" class="fa fa-sign-in fa-1x"></i> Signup
+            <i title="Signup" class="fa fa-user-plus fa-1x"></i> Signup
           </a>
         </li>
         <li class="nav-item">

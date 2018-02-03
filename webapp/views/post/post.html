@@ -34,30 +34,16 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div ng-repeat="post in user.posts">
-        <div ng-include="'views/templates/post-thumb-template.html'"></div>
-        <br>
-      </div>
-    </div>
-    <div class="col-sm-3">
+    <div class="col-sm-9">
       <div class="card">
         <div class="card-body">
-          <b>Discover</b>
-          <p>
-            bla bla bla bla bla
-          </p>
-          <p>
-            bla bla bla bla bla
-          </p>
-        </div>
-      </div>
-      <br>
-      <div class="">
-        <h5>Featured posts</h5>
-        <div ng-repeat="post in featured_posts">
-            <div ng-include="'views/templates/post-thumb-template.html'"></div>
-            <br>
+          <h5 class="card-title">{{post.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
+          <img ng-src="{{post.img}}" class="img-fluid" />
+          <p class="card-text">{{post.content}}</p>
+          <div class="pull-right">
+            <i title="Server" class="fa fa-heart ct_red300 fa-1x"></i> 37
+          </div>
         </div>
       </div>
     </div>

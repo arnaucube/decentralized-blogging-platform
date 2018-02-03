@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('app.user', ['ngRoute'])
+angular.module('app.post', ['ngRoute'])
 
     .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/user', {
-            templateUrl: 'views/user/user.html',
-            controller: 'UserCtrl'
+        $routeProvider.when('/post', {
+            templateUrl: 'views/post/post.html',
+            controller: 'PostCtrl'
         });
     }])
 
-    .controller('UserCtrl', function($scope, $rootScope, $http) {
+    .controller('PostCtrl', function($scope, $rootScope, $http) {
 
         /*$http.get(apiurl + 'user/' + )
             .then(function(data) {
@@ -21,5 +21,5 @@ angular.module('app.user', ['ngRoute'])
             });*/
             //fake data
           $scope.user = user;
-          $scope.featured_posts= featured_posts;
+          $scope.post = user.posts[0];
     });

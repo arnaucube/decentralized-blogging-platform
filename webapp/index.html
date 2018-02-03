@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/own.css">
 
     <link href="bower_components/cssMaterialColors/colors.css" rel="stylesheet">
+
 </head>
 
 <body ng-app="webapp">
@@ -42,8 +43,8 @@ Works for both browser and electron with the same code -->
 
 
     <!-- Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <!-- Angular Chart -->
@@ -54,7 +55,13 @@ Works for both browser and electron with the same code -->
     <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css" />
     <script type="text/javascript" src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
 
+    <!-- medium-editor -->
+    <script src="node_modules/medium-editor/dist/js/medium-editor.js"></script>
+    <link rel="stylesheet" href="node_modules/medium-editor/dist/css/medium-editor.css">
+    <link rel="stylesheet" href="node_modules/medium-editor/dist/css/themes/default.css">
+
     <!-- app's js -->
+    <script src="fake_data.js"></script>
     <script src="app.js"></script>
     <script src="views/navbar.js"></script>
     <script src="views/signup/signup.js"></script>
@@ -62,6 +69,9 @@ Works for both browser and electron with the same code -->
     <script src="views/main/main.js"></script>
     <script src="views/newmodel/newmodel.js"></script>
     <script src="views/user/user.js"></script>
+    <script src="views/post/post.js"></script>
+    <script src="views/write/write.js"></script>
+
 
 
 <!-- ELECTRON

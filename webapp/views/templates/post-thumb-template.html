@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <a ng-href="#!/user/{{user.id}}" class="row">
+      <div class="col-sm-3">
+        <img class="o_userImgCircular" ng-src="https://www.eyerys.com/sites/default/files/mark_zuckerberg.jpg" />
+      </div>
+      <div class="col-sm-8">
+        <b>{{user.name}} {{user.lastname}}</b>
+        <div class="mb-2 text-muted">@{{user.username}}</div>
+      </div>
+    </a>
+  </div>
+  <a ng-href="#!/post/{{post.id}}" class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
+    <img ng-src="{{post.img}}" class="img-fluid" />
+    <p class="card-text">{{post.content}}</p>
+    <div class="pull-right">
+      <i title="Server" class="fa fa-heart ct_red300 fa-1x"></i> 37
+    </div>
+  </a>
+</div>

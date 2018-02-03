@@ -34,33 +34,22 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-6">
-      <div ng-repeat="post in user.posts">
-        <div ng-include="'views/templates/post-thumb-template.html'"></div>
-        <br>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="card">
-        <div class="card-body">
-          <b>Discover</b>
-          <p>
-            bla bla bla bla bla
-          </p>
-          <p>
-            bla bla bla bla bla
-          </p>
+    <div class="col-sm-9">
+      <div class="row">
+        <div class="col-sm-10">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Title of the article..." style="font-weight:bold;">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div ng-click="save()" class="btn btn-raised btn-block c_o_blue300 pull-right">Publicate</div>
         </div>
       </div>
-      <br>
-      <div class="">
-        <h5>Featured posts</h5>
-        <div ng-repeat="post in featured_posts">
-            <div ng-include="'views/templates/post-thumb-template.html'"></div>
-            <br>
+      <div class="card">
+        <div class="card-body">
+          <div class="editable" style="min-height: 500px; padding: 10px;"></div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>

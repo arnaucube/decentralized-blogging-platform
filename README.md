@@ -16,3 +16,8 @@ in order to allow access to IPFS from the app.
 ```
 ipfs daemon
 ```
+
+
+## Third party tools
+
+- For the WYSIWYG editor, is used the medium-editor clone: https://github.com/yabwe/medium-editor

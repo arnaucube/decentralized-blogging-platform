@@ -12,17 +12,18 @@ angular.module('app', [
   'app.login',
   'app.main',
   'app.newmodel',
-  'app.user'
+  'app.user',
+  'app.post',
+  'app.write'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
     /*$routeProvider.otherwise({
       redirectTo: '/main'
     });*/
-
+console.log("window", window.location.hash);
     if((localStorage.getItem('dblog_user')))
       {
-        console.log(window.location.hash);
         if((window.location.hash==='#!/login')||(window.location.hash==='#!/signup'))
         {
           window.location='#!/main';
@@ -30,7 +31,7 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
 
         $routeProvider.otherwise({redirectTo: '/main'});
       }else{
-        if((window.location!=='#!/login')||(window.location!=='#!/signup')||(window.location!=='#!/main'))
+        if((window.location.hash!=='#!/login')||(window.location.hash!=='#!/signup')||(window.location.hash!=='#!/main')||(window.location.hash!=='#!/user'))
         {
           console.log('app, user no logged');
 

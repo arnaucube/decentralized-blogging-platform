@@ -7,7 +7,10 @@
 body {
   background: #f5f8fa;
 }
-
+a, a:hover {
+  text-decoration: none;
+  color: #000000;
+}
 .o_userProfileBackground {
   min-height: 30% !important;
   width: 100%;
@@ -29,12 +32,17 @@ body {
 }
 
 .o_userImgCircular {
-  margin-top: -100px;
-  margin-left: 25%;
+  width: 60px;
   background: #ffffff;
-  width: 50%;
-  border: 4px #ffffff solid;
   border-radius: 150px;
   -webkit-border-radius: 150px;
   -moz-border-radius: 150px;
+}
+
+.o_profilePageImage {
+  border: 4px #ffffff solid;
+  margin-top: -100px;
+  margin-left: 25%;
+  width: 50%;
+  width: 50%;
 }
