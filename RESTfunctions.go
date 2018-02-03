@@ -138,6 +138,13 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 	err = postCollection.Find(bson.M{"user._id": bson.ObjectIdHex(userid)}).Limit(50).All(&user.Posts)
 	check(err)
 
+	//for each post, get the user
+	for i, _ := range user.Posts {
+		err = userCollection.Find(bson.M{"_id": user.Posts[i].User.ID}).One(&user.Posts[i].User)
+		check(err)
+		//TODO don't return the user.Token, password, etc only the Name, LastName, Username, img
+	}
+
 	jResp, err := json.Marshal(user)
 	check(err)
 	fmt.Fprintln(w, string(jResp))
@@ -198,6 +205,13 @@ func GetPosts(w http.ResponseWriter, r *http.Request) {
 	err := postCollection.Find(bson.M{}).Limit(50).All(&posts)
 	check(err)
 
+	//for each post, get the user
+	for i, _ := range posts {
+		fmt.Println(posts[i].User.ID)
+		err = userCollection.Find(bson.M{"_id": posts[i].User.ID}).One(&posts[i].User)
+		check(err)
+		//TODO don't return the user.Token, password, etc only the Name, LastName, Username, img
+	}
 	jResp, err := json.Marshal(posts)
 	check(err)
 	fmt.Fprintln(w, string(jResp))

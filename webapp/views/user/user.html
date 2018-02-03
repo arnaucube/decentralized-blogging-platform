@@ -17,7 +17,7 @@
     </div>
     <div class="col-sm-6">
 
-      <div ng-repeat="post in user.posts">
+      <div ng-repeat="post in user.posts | orderBy: '-date'">
         <div ng-include="'views/templates/post-thumb-template.html'"></div>
         <br>
       </div>
@@ -42,10 +42,10 @@
       <br>
       <div class="">
         <h5>Featured posts</h5>
-        <div ng-repeat="post in featured_posts">
+        <!--<div ng-repeat="post in featured_posts">
             <div ng-include="'views/templates/post-thumb-template.html'"></div>
             <br>
-        </div>
+        </div>-->
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 'use strict';
 
 var apiurl = "http://127.0.0.1:3000/";
+var ipfsurl = "http://127.0.0.1:5001/api/v0/";
 
 angular.module('app', [
   'ngRoute',
@@ -77,12 +78,12 @@ console.log("window", window.location.hash);
   .factory('api', function($http) {
     return {
       init: function() {
-        console.log("http", $http.options);
+        /*console.log("http", $http.options);
         var dblog_user = JSON.parse(localStorage.getItem('dblog_user'));
         if (dblog_user) {
           $http.defaults.headers.common['Authorization'] = dblog_user.token;
           $http.defaults.headers.post['Authorization'] = dblog_user.token;
-        }
+        }*/
       }
     };
   })

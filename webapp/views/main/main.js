@@ -12,7 +12,7 @@ angular.module('app.main', ['ngRoute'])
     .controller('MainCtrl', function($scope, $rootScope, $http) {
 
 
-      $scope.posts = {};
+      $scope.posts = [];
       $http.get(apiurl + 'posts')
           .then(function(data) {
               console.log('data success');

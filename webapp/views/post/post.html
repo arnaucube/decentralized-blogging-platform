@@ -30,9 +30,13 @@
               </div>
             </span>
           </div>
-          <h5 class="card-title">{{post.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{post.summary}}</h6>
-          <img ng-src="{{post.img}}" class="img-fluid" />
+          <div class="col-sm-10">
+            <h5 class="card-title">{{post.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{post.summary}}</h6>
+          </div>
+          
+          <br>
+          <img ng-show="post.thumbimg" ng-src="http://localhost:8080/ipfs/{{post.thumbimg}}" class="img-fluid" />
 
           <div ng-include="'http://localhost:8080/ipfs/'+post.content"></div>
 

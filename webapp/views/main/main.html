@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <div class="col-sm-4">
-          <div ng-repeat="post in posts" ng-if="$index % 3 == 0">
+          <div ng-repeat="post in posts | orderBy: '-date'" ng-if="$index % 3 == 0">
               <a ng-href="#!/post/{{post.id}}">
                   <div ng-include="'views/templates/post-thumb-template.html'"></div>
               </a>
@@ -9,7 +9,7 @@
           </div>
       </div>
       <div class="col-sm-4">
-          <div ng-repeat="post in posts" ng-if="$index % 3 == 1">
+          <div ng-repeat="post in posts | orderBy: '-date'" ng-if="$index % 3 == 1">
               <a ng-href="#!/post/{{post.id}}">
                   <div ng-include="'views/templates/post-thumb-template.html'"></div>
               </a>
@@ -17,7 +17,7 @@
           </div>
       </div>
       <div class="col-sm-4">
-          <div ng-repeat="post in posts" ng-if="$index % 3 == 2">
+          <div ng-repeat="post in posts | orderBy: '-date'" ng-if="$index % 3 == 2">
               <a ng-href="#!/post/{{post.id}}">
                   <div ng-include="'views/templates/post-thumb-template.html'"></div>
               </a>
@@ -25,7 +25,7 @@
           </div>
       </div>
   </div>
-  <div class="row">
+  <!--<div class="row">
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
         <a ng-href="#!/user">
@@ -38,5 +38,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
 </div>
