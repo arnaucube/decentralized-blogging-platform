@@ -18,12 +18,23 @@
     <div class="col-sm-9">
       <div class="card">
         <div class="card-body">
+          <div class="pull-right text-secondary">
+            <span class="row">
+              <div class="text-right">
+                {{post.date | date: "MMM d, y"}}
+              </div>
+              </span>
+            <span class="row">
+              <div class="text-right">
+                {{post.date | date: "HH:mm"}}h
+              </div>
+            </span>
+          </div>
           <h5 class="card-title">{{post.title}}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{{post.subtitle}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted">{{post.summary}}</h6>
           <img ng-src="{{post.img}}" class="img-fluid" />
-          <p class="card-text">{{post.content}}</p>
 
-          <div ng-include="'http://localhost:8080/ipfs/QmUv3dQuNREHnEFYs7JkqyxZjYfEXd4t9jej5jY2dPVaqU'"></div>
+          <div ng-include="'http://localhost:8080/ipfs/'+post.content"></div>
 
           <div class="pull-right">
             <i title="Server" class="fa fa-heart ct_red300 fa-1x"></i> 37

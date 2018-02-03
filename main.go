@@ -12,6 +12,7 @@ import (
 )
 
 const keysDir = "keys"
+const postsDir = "ownposts"
 const keysize = 2048
 const hashize = 1536
 
@@ -27,7 +28,7 @@ func main() {
 	//create models directory
 	_ = os.Mkdir(keysDir, os.ModePerm)
 	//create models directory
-	_ = os.Mkdir("ownposts", os.ModePerm)
+	_ = os.Mkdir(postsDir, os.ModePerm)
 
 	initializeToken()
 

@@ -10,6 +10,7 @@ type Config struct {
 	APIPort string      `json:"apiport"`
 	WebPort string      `json:"webport"`
 	Mongodb MongoConfig `json:"mongodb"`
+	IPFSurl string      `json:"ipfsurl"`
 }
 type MongoConfig struct {
 	IP       string `json:"ip"`

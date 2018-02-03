@@ -3,9 +3,14 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
+	"os/exec"
+	"strings"
 	"time"
 
+	"github.com/fatih/color"
 	"github.com/gorilla/mux"
 	"gopkg.in/mgo.v2/bson"
 )
@@ -151,6 +156,21 @@ func NewPost(w http.ResponseWriter, r *http.Request) {
 	user := User{}
 	err = userCollection.Find(bson.M{"token": usertoken}).One(&user)
 	check(err)
+
+	//save the post.Content into an html file
+	err = ioutil.WriteFile(postsDir+"/"+"file.html", []byte(post.Content), 0644)
+	check(err)
+	//add the html file to ipfs
+	out, err := exec.Command("bash", "-c", "ipfs add "+postsDir+"/file.html").Output()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(out)
+	hash := strings.Split(string(out), " ")[1]
+	color.Blue(hash)
+
+	//save the hash to the post.content
+	post.Content = hash
 
 	//add date to post
 	post.Date = time.Now()
